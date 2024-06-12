@@ -1,0 +1,72 @@
+#ma2,
+#ma3 {
+    display: none;
+}
+
+#ma1,
+#ma2,
+#ma3 {
+    height: 23rem;
+    overflow-y: auto;
+    border: 5px solid yellow;
+}
+
+.listing {
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 5px solid black;
+    margin: 10px;
+}
+
+.ts,
+.da {
+    color: red;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.ts {
+    width: 250px;
+}
+
+.da {
+    width: 100px;
+}
+
+#refresh {
+    font-size: 20px;
+    background-color: black;
+    color: blue;
+    padding: 2px;
+    position: relative;
+    left: 85%;
+}
+
+#count {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 5px;
+}
+
+.combut {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    border: 3px solid black;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.delbut {
+    width: 10rem;
+    height: 24px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.delbut:hover {
+    background-color: black;
+    color: red;
+}
