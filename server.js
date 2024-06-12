@@ -5,12 +5,18 @@ const path = require("path");
 const app = express();
 
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: [`${window.location.origin}`],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 let db;
 async function initialization() {
   const url =
-    "mongodb+srv://khizarali:khizar24@todos.brcftoa.mongodb.net/todos";
+    "mongodb+srv://khizarali:khizar24@todos.brcftoa.mongodb.net/todos?retryWrites=true&w=majority";
   const con = await mongo.MongoClient.connect(url);
   db = await con.db("todos");
 }
@@ -68,8 +74,8 @@ app.get("/showcomplete", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "build")));
-  res.sendFile(path.resolve(__dirname, "build", "index.html"));
+  app.use(express.static(path.resolve(__dirname, "front-end", "build")));
+  res.sendFile(path.resolve(__dirname, "front-end", "build", "index.html"));
 });
 
 app.listen(3000);
