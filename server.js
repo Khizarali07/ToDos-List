@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const app = express();
+const port = "3000";
 
 app.use(express.json());
 app.use(cors());
@@ -67,6 +68,6 @@ async function fun() {
     res.sendFile(path.resolve(__dirname, "front-end", "build", "index.html"));
   });
 
-  app.listen(3000);
+  app.listen(port);
 }
 fun();
