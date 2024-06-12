@@ -68,8 +68,7 @@ app.get("/showcomplete", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  app.use(express.static(path.resolve(__dirname, "front-end", "build")));
-  res.sendFile(path.resolve(__dirname, "front-end", "build", "index.html"));
+  res.json("Hello world !!!");
 });
 
 app.listen(3000);
