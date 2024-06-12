@@ -5,13 +5,7 @@ const path = require("path");
 const app = express();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: [`${window.location.origin}`],
-    methods: ["POST", "GET"],
-    credentials: true,
-  })
-);
+app.use(cors());
 
 let db;
 async function initialization() {
